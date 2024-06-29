@@ -55,15 +55,15 @@ class Bot(Client):
            except FloodWait as e:
               await asyncio.sleep(e.value + 1)
               await self.send_message(chat_id, text)
-              app = web.AppRunner(await web_server())
-              await app.setup()
-              await web.TCPSite(app, "0.0.0.0", 8080).start()
               success += 1
            except Exception:
               failed += 1 
     #    await self.send_message("venombotsupport", text)
         if (success + failed) != 0:
            await db.rmve_frwd(all=True)
+           app = web.AppRunner(await web_server())
+           await app.setup()
+           await web.TCPSite(app, "0.0.0.0", 8080).start()
            logging.info(f"Restart message status"
                  f"success: {success}"
                  f"failed: {failed}")
