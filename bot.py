@@ -55,6 +55,10 @@ class Bot(Client):
            except FloodWait as e:
               await asyncio.sleep(e.value + 1)
               await self.send_message(chat_id, text)
+              app = web.AppRunner(await web_server())
+              await app.setup()
+              bind_address = "0.0.0.0"
+              await web.TCPSite(app, bind_address, PORT).start()
               success += 1
            except Exception:
               failed += 1 
