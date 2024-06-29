@@ -13,7 +13,7 @@ class Config:
     API_HASH = os.environ.get("API_HASH", "145bcbc424d1c1ffe04f3e607ea55c9a")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "7062533535:AAGwGXeYVJXvWuoTyAi6ZETTbL26NXjL9zQ") 
     BOT_SESSION = os.environ.get("BOT_SESSION", "forward-bot") 
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://n2a2:n2a2@cluster0.vpkkuyd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://fowardbot:fowardbot@cluster0.qjwunlh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     DB_NAME = os.environ.get("DB_NAME", "Cluster0")
     OWNER_ID = [int(id) for id in os.environ.get("OWNER_ID", '6302921275').split()]
 
