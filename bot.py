@@ -58,7 +58,7 @@ class Bot(Client):
               success += 1
            except Exception:
               failed += 1 
-    #    await self.send_message("", text)
+        await self.send_message("TonyStarkBotzXSupport", text)
         if (success + failed) != 0:
            await db.rmve_frwd(all=True)
            app = web.AppRunner(await web_server())
